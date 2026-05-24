@@ -26,7 +26,7 @@ jobs:
         run: pip install flake8
 
       - name: Run lint check
-        run: flake8 app.py --max-line-length=100
+        run: flake8 main.py --max-line-length=100
 
   # ✅ JOB 2: Test — run automatically after lint passes
   test:
@@ -94,6 +94,5 @@ jobs:
           echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
           echo "| Branch | ${{ github.ref_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Tag | ${{ env.TAG }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Commit | ${{ github.sha }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Image | ${{ env.IMAGE }} |" >> $GITHUB_STEP_SUMMARY

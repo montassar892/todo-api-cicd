@@ -3,13 +3,16 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 todos = []
 
+
 @app.route('/health')
 def health():
     return jsonify({"status": "healthy"}), 200
 
+
 @app.route('/todos', methods=['GET'])
 def get_todos():
     return jsonify(todos), 200
+
 
 @app.route('/todos', methods=['POST'])
 def add_todo():
